@@ -1,7 +1,10 @@
 package com.digitalsingular.rxdb.enclosure;
 
-import org.springframework.data.repository.PagingAndSortingRepository;
+import java.util.Set;
 
-public interface EnclosureRepository extends PagingAndSortingRepository<Enclosure, Integer>{
+import org.springframework.data.repository.CrudRepository;
 
+public interface EnclosureRepository extends CrudRepository<Enclosure, Integer>{
+
+	Set<Enclosure> findByPlot(int plot);
 }
