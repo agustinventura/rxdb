@@ -1,103 +1,100 @@
 package com.digitalsingular.rxdb.enclosure;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.data.relational.core.mapping.Column;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "SIGPAC19D_RECINTOS")
+@Table("SIGPAC19D_RECINTOS")
 public class Enclosure {
 
 	@Id
-	@Column(name="ID_RECINTO")
+	@Column("id_recinto")
 	private int id;
 	
-	@Column(name="CD_PROVINCIA")
+	@Column("cd_provincia")
 	private int province;
 	
-	@Column(name="CD_MUNICIPIO")
+	@Column("cd_municipio")
 	private int town;
 	
-	@Column(name="CD_PARCELA")
+	@Column("cd_parcela")
 	private int plot;
 	
-	@Column(name="CD_RECINTO")
+	@Column("cd_recinto")
 	private int code;
 	
-	@Column(name="CD_USO")
+	@Column("cd_uso")
 	private String use;
 	
-	@Column(name="CD_AGREGADO")
+	@Column("cd_agregado")
 	private Integer aggregate;
 	
-	@Column(name="CD_ZONA")
+	@Column("cd_zona")
 	private Integer zone;
 	
-	@Column(name="NU_AREA")
+	@Column("nu_area")
 	private Float area;
 	
-	@Column(name="NU_PERIMETRO")
+	@Column("nu_perimetro")
 	private Float perimeter;
 	
-	@Column(name="NU_AREA_SIGPAC")
+	@Column("nu_area_sigpac")
 	private Float sigpacArea;
 	
-	@Column(name="NU_COEF_REGADIO")
+	@Column("nu_coef_regadio")
 	private Float irrigationCoefficient;
 	
-	@Column(name="NU_COEF_PASTOREO")
+	@Column("nu_coef_pastoreo")
 	private Float grazingCoefficient;
 	
-	@Column(name="NU_PDTE_MEDIA")
+	@Column("nu_pdte_media")
 	private Float averageSlope;
 	
-	@Column(name="NU_PDTE_MAX")
+	@Column("nu_pdte_max")
 	private Float maxSlope;
 	
-	@Column(name="NU_PDTE_MIN")
+	@Column("nu_pdte_min")
 	private Float minSlope;
 	
-	@Column(name="NU_PORCENTAJE_CAT1")
+	@Column("nu_porcentaje_cat1")
 	private Float firstCategoryPercentage;
 	
-	@Column(name="NU_PORCENTAJE_CAT2")
+	@Column("nu_porcentaje_cat2")
 	private Float secondCategoryPercentage;
 	
-	@Column(name="NU_PORCENTAJE_CAT3")
+	@Column("nu_porcentaje_cat3")
 	private Float thirdCategoryPercentage;
 	
-	@Column(name="NU_PORCENTAJE_CAT4")
+	@Column("nu_porcentaje_cat4")
 	private Float fourthCategoryPercentage;
 	
-	@Column(name="NU_PORCENTAJE_CAT5")
+	@Column("nu_porcentaje_cat5")
 	private Float fifthCategoryPercentage;
 	
-	@Column(name="NU_PORCENTAJE_CAT6")
+	@Column("nu_porcentaje_cat6")
 	private Float sixthCategoryPercentage;
 	
-	@Column(name="LG_F_DEHESA")
+	@Column("lg_f_dehesa")
 	private boolean dehesado;
 	
-	@Column(name="NU_SUPERF_DEHESA")
+	@Column("nu_superf_dehesa")
 	private Float dehesadaAreaPercentage;
 	
-	@Column(name="PC_DEHESA")
+	@Column("pc_dehesa")
 	private Float dehesaPercentage;
 	
-	@Column(name="NU_COEF_PASTOS")
+	@Column("nu_coef_pastos")
 	private Float pasturesCoefficient;
 	
-	@Column(name="PC_PASTOS")
+	@Column("pc_pastos")
 	private Float pasturesPercentage;
 	
-	@Column(name="NU_COORDENADA_X")
+	@Column("nu_coordenada_x")
 	private Float xCoordinate;
 	
-	@Column(name="NU_COORDENADA_Y")
+	@Column("nu_coordenada_y")
 	private Float yCoordinate;
 	
-	@Column(name="LG_NO_DECLARA_5")
+	@Column("lg_no_declara_5")
 	private boolean fifthUndeclared;
 
 	public int getId() {
