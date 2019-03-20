@@ -1,0 +1,10 @@
+{
+  "simulation": "digitalsingular.rxdb",
+  "simulationId": "rxdb",
+  "start": 1553116387752,
+  "description": "",
+  "scenarios": ["rxdb"],
+  "assertions": [
+
+  ]
+}
