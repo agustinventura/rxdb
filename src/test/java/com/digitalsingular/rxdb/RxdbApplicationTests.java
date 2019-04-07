@@ -18,7 +18,7 @@ import reactor.test.StepVerifier;
 @SpringBootTest
 public class RxdbApplicationTests {
 
-	Logger logger = LoggerFactory.getLogger(RxdbApplicationTests.class);
+	private static Logger logger = LoggerFactory.getLogger(RxdbApplicationTests.class);
 	
 	@Autowired
 	private EnclosureRepository repository;
