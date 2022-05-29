@@ -12,17 +12,17 @@ import io.r2dbc.spi.ConnectionFactory;
 @Configuration
 @EnableR2dbcRepositories
 public class DataBaseConfiguration extends AbstractR2dbcConfiguration {
-	  
-	  @Bean
-	  public ConnectionFactory connectionFactory() {
-			PostgresqlConnectionConfiguration config =
-				PostgresqlConnectionConfiguration.builder()
-					.database("sigpac")
-					.password("sigpac")
-					.username("sigpac")
-					.host("localhost")
-					.build();
-			return new PostgresqlConnectionFactory(config);
 
-		}
+    @Bean
+    public ConnectionFactory connectionFactory() {
+        PostgresqlConnectionConfiguration config =
+                PostgresqlConnectionConfiguration.builder()
+                        .host("localhost")
+                        .database("sigpac")
+                        .username("sigpac")
+                        .password("sigpac")
+                        .build();
+        return new PostgresqlConnectionFactory(config);
+
+    }
 }
