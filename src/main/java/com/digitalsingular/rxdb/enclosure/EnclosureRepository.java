@@ -4,10 +4,10 @@ import org.springframework.data.r2dbc.repository.Query;
 import org.springframework.data.r2dbc.repository.R2dbcRepository;
 
 
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import reactor.core.publisher.Flux;
 
-public interface EnclosureRepository extends R2dbcRepository<Enclosure, Integer>{
+public interface EnclosureRepository extends ReactiveCrudRepository<Enclosure, Integer> {
 
-	@Query("Select * from SIGPAC19D_RECINTOS where cd_parcela = $1")
 	Flux<Enclosure> findByPlot(int plot);
 }
