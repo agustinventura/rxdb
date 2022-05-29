@@ -1,4 +1,4 @@
-package digitalsingular
+package com.digitalsingular.rxdb
 
 import scala.concurrent.duration._
 import scala.util.Random
@@ -22,8 +22,8 @@ class rxdb extends Simulation {
 	  "page" -> Random.nextInt(5982)))
 
 	val scn = scenario("rxdb").feed(feeder).repeat(500) {
-		exec(http("Enclosures Page WarmUp Request")
-			.get("/enclosures?plot=${page}")
+		exec(http("Enclosures Page Request")
+			.get("/enclosures?plot=#{page}")
 			.check(status.is(200)))
 	}
 
