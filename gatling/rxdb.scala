@@ -1,4 +1,4 @@
-package digitalsingular
+package com.digitalsingular.rxdb
 
 import scala.concurrent.duration._
 import scala.util.Random
@@ -18,13 +18,14 @@ class rxdb extends Simulation {
 		.upgradeInsecureRequestsHeader("1")
 		.userAgentHeader("Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:65.0) Gecko/20100101 Firefox/65.0")
 
-	val feeder = Iterator.continually(Map(
-	  "page" -> Random.nextInt(5982)))
+	def randomPlot() = Random.nextInt(5982)
 
-	val scn = scenario("rxdb").feed(feeder).repeat(500) {
-		exec(http("Enclosures Page WarmUp Request")
-			.get("/enclosures?plot=${page}")
-			.check(status.is(200)))
+	val scn = scenario("rxdb").repeat(5000) {
+		val plotId = randomPlot()
+		exec(http("Enclosures Page Request")
+			.get("/enclosures?plot=" + plotId)
+			.check(status.is(200))
+			.check(jsonPath("$[0].plot").ofType[Int].is(plotId)))
 	}
 
 	setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
